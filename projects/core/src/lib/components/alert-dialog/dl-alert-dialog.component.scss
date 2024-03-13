@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  max-width: 28rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 1rem;
+
+  > * + * {
+    margin-left: .5rem;
+  }
+}

@@ -1,0 +1,9 @@
+<ng-content select="dl-label"></ng-content>
+<div class="form-field" [ngClass]="_formFieldClasses">
+  <ng-content></ng-content>
+</div>
+@if (invalid) {
+<div>
+  <ng-content select="dl-error"></ng-content>
+</div>
+}

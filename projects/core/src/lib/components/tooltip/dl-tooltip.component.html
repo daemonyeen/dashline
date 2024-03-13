@@ -1,0 +1,17 @@
+<div cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  <ng-content></ng-content>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="opened"
+  [cdkConnectedOverlayPositions]="_positions"
+  [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
+  (detach)="close()"
+
+>
+  <div class="tooltip-host" [@transformOverlay]="animationState">
+    {{text()}}
+  </div>
+</ng-template>

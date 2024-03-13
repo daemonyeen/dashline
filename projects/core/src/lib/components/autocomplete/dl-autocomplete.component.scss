@@ -1,0 +1,11 @@
+:host {
+  display: inline-block;
+  width: 100%;
+}
+
+.empty {
+  font-size: var(--font-size__sm);
+  font-weight: var(--font-weight__medium);
+  color: hsl(var(--muted-foreground));
+  padding: .375rem .5rem;
+}

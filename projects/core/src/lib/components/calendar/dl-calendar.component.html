@@ -1,0 +1,27 @@
+<div cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="open()">
+  <button type="button">
+    <dl-icon variant="ri-calendar-line" class="icon"/>
+  </button>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  cdkConnectedOverlayHasBackdrop
+  [cdkConnectedOverlayOrigin]="trigger"
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayOpen]="opened"
+  [cdkConnectedOverlayPositions]="_positions"
+  [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
+  (backdropClick)="close()"
+  (detach)="close()"
+>
+  <div class="overlay-host" [@transformOverlay]="animationState">
+    <dl-calendar-picker
+      [dateFormat]="dateFormat()"
+      [selectedDate]="selectedDate"
+      (dateChange)="setDate($event)"
+    />
+  </div>
+
+</ng-template>
+

@@ -1,0 +1,8 @@
+<ng-content select="dl-checkbox"/>
+<div
+  class="label"
+  [class.disabled]="_disabled()"
+  (click)="toggle()"
+>
+  <ng-content />
+</div>

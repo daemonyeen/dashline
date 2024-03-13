@@ -1,0 +1,11 @@
+<div class="label">
+  {{data.message}}
+</div>
+
+@if (hasAction) {
+<div class="action">
+  <button dl-button appearance="ghost" (click)="action()">
+    {{data.action}}
+  </button>
+</div>
+}
