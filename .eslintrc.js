@@ -1,0 +1,154 @@
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2017: true,
+    es6: true,
+    node: true,
+  },
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+  overrides: [
+    // NOTE: WE ARE NOT APPLYING PRETTIER IN THIS OVERRIDE, ONLY @ANGULAR-ESLINT/TEMPLATE
+    {
+      files: ['*.html'],
+      // parser: '@angular-eslint/template-parser',
+      parser: '@html-eslint/parser',
+      plugins: ['@html-eslint'],
+      extends: [
+        'plugin:@html-eslint/recommended',
+        // 'plugin:@angular-eslint/template/recommended',
+      ],
+      rules: {
+        '@html-eslint/require-doctype': 'off',
+        '@html-eslint/require-closing-tags': 'off',
+        '@html-eslint/indent': ['error', 2],
+      },
+    },
+    {
+      files: ['*.ts', '*.tsx', '*.js'],
+      plugins: ['prettier'],
+      extends: ['eslint:recommended', 'prettier'],
+      rules: {
+        'prettier/prettier': ['error'],
+        'linebreak-style': 'off',
+        'no-multiple-empty-lines': 'error',
+        'no-empty': 'off',
+        'no-irregular-whitespace': 'off',
+        'padding-line-between-statements': [
+          'error',
+          {
+            blankLine: 'always',
+            next: '*',
+            prev: ['const', 'let'],
+          },
+          {
+            blankLine: 'always',
+            next: 'return',
+            prev: '*',
+          },
+          {
+            blankLine: 'any',
+            next: ['const', 'let'],
+            prev: ['const', 'let'],
+          },
+        ],
+        semi: ['error', 'always'],
+        quotes: [
+          'error',
+          'single',
+          {
+            avoidEscape: true,
+          },
+        ],
+        'comma-dangle': [
+          'error',
+          {
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always-multiline',
+            exports: 'always-multiline',
+            functions: 'always-multiline',
+          },
+        ],
+      },
+    },
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      extends: [
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+      ],
+      plugins: ['@typescript-eslint', 'unused-imports'],
+      rules: {
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+          'error',
+          { ignoreRestSiblings: true },
+        ],
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            format: ['PascalCase'],
+            selector: 'interface',
+          },
+          {
+            format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+            selector: 'variable',
+          },
+        ],
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-floating-promises': 'off',
+        '@typescript-eslint/no-namespace': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        '@typescript-eslint/no-var-requires': 0,
+        '@typescript-eslint/prefer-regexp-exec': 'off',
+        '@typescript-eslint/restrict-plus-operands': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'off',
+        '@typescript-eslint/triple-slash-reference': 'off',
+        '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off',
+        '@typescript-eslint/require-await': 'off',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+      },
+    },
+    {
+      files: ['*.js'],
+      parserOptions: {
+        ecmaVersion: 9,
+        sourceType: 'module',
+      },
+      rules: {
+        'no-unused-vars': [
+          'error',
+          {
+            args: 'after-used',
+            ignoreRestSiblings: true,
+            varsIgnorePattern: '^_',
+          },
+        ],
+      },
+    },
+    {
+      files: ['*.spec.ts', '*.spec.tsx', '*.spec.js', '*.spec.jsx'],
+      env: {
+        jest: true,
+      },
+      rules: {
+        'prefer-destructuring': 'off',
+      },
+    },
+  ],
+};

@@ -1,0 +1,51 @@
+<div class="p-6">
+  <h1 class="text-4xl font-bold tracking-tight">Popover</h1>
+  <p class="text-lg text-muted-foreground mt-2">Displays rich content in a portal, triggered by a button.</p>
+
+  <h2 class="subtitle-2 pb-2 mt-8">Example</h2>
+
+  <div class="preview">
+    <dl-popover [template]="popover">
+      <button dl-button type="button" appearance="ghost">
+        Open popover
+      </button>
+
+      <ng-template #popover>
+        <div class="p-4">
+          <h4 class="font-medium leading-none">Dimensions</h4>
+          <p class="text-sm text-muted-foreground mt-2">Set the dimensions for the layer.</p>
+
+          <form class="grid gap-2 mt-6">
+            <div class="grid grid-cols-3 items-center gap-4">
+              <dl-label>Width</dl-label>
+              <dl-form-field class="col-span-2">
+                <input dl-input type="text" value="100%">
+              </dl-form-field>
+            </div>
+
+            <div class="grid grid-cols-3 items-center gap-4">
+              <dl-label>Max. width</dl-label>
+              <dl-form-field class="col-span-2">
+                <input dl-input type="text" value="100%">
+              </dl-form-field>
+            </div>
+
+            <div class="grid grid-cols-3 items-center gap-4">
+              <dl-label>Height</dl-label>
+              <dl-form-field class="col-span-2">
+                <input dl-input type="text" value="25px">
+              </dl-form-field>
+            </div>
+
+            <div class="grid grid-cols-3 items-center gap-4">
+              <dl-label>Max. height</dl-label>
+              <dl-form-field class="col-span-2">
+                <input dl-input type="text" value="none">
+              </dl-form-field>
+            </div>
+          </form>
+        </div>
+      </ng-template>
+    </dl-popover>
+  </div>
+</div>

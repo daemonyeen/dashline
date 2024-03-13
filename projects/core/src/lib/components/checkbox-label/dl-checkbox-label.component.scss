@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  font-size: var(--font-size__sm);
+  font-weight: var(--font-weight__medium);
+  line-height: 1;
+  color: hsl(var(--foreground));
+  margin-left: .5rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: default;
+  opacity: .5;
+}

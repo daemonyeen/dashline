@@ -1,0 +1,49 @@
+<div class="controls">
+  <button
+    dl-button
+    type="button"
+    appearance="ghost"
+    size="icon"
+    class="control-button"
+    (click)="prevMonth()"
+  >
+    <dl-icon variant="ri-arrow-left-s-line" class="control"/>
+  </button>
+  <div class="current-date">
+    {{ getScreenDate() | date: "MMM" | titlecase }}
+    {{ getScreenDate() | date: "YYYY" }}
+  </div>
+
+  <button
+    dl-button
+    type="button"
+    appearance="ghost"
+    size="icon"
+    class="control-button"
+    (click)="nextMonth()"
+  >
+    <dl-icon variant="ri-arrow-right-s-line" class="control"/>
+  </button>
+</div>
+
+<div class="calendar">
+  <div class="weekdays">
+    @for (day of weeks[1]; track day) {
+    <div class="weekday">{{ day | date: "EEEEEE" }}</div>
+    }
+  </div>
+  @for (week of weeks; track week) {
+  <div class="days">
+    @for (day of week; track day) {
+    <div
+      [class.same-month]="isSameMonth(day)"
+      [class.active]="isSelectedDate(day)"
+      (click)="onSelect(day)"
+      class="day"
+    >
+      {{ day | date: "d" }}
+    </div>
+    }
+  </div>
+  }
+</div>

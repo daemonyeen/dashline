@@ -1,0 +1,20 @@
+<div cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="open()">
+  <ng-content></ng-content>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  cdkConnectedOverlayHasBackdrop
+  [cdkConnectedOverlayOrigin]="trigger"
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayOpen]="opened"
+  [cdkConnectedOverlayPositions]="_positions"
+  [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
+  (backdropClick)="close()"
+  (detach)="close()"
+
+>
+  <div class="overlay-host  overlay-p" [@transformOverlay]="animationState">
+    <ng-content select="[dl-options]"/>
+  </div>
+</ng-template>

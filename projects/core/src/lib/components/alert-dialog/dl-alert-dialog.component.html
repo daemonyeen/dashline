@@ -1,0 +1,11 @@
+<h2 class="dialog-title">{{_data.title}}</h2>
+<p class="dialog-lead">{{_data.lead}}</p>
+<div class="actions">
+  <button dl-button type="button" appearance="ghost" (click)="close()">
+    {{_data.cancel}}
+  </button>
+
+  <button dl-button type="button" appearance="primary" (click)="action()">
+    {{_data.action}}
+  </button>
+</div>

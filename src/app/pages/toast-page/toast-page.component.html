@@ -1,0 +1,53 @@
+<div class="p-6">
+  <h1 class="text-4xl font-bold tracking-tight">Toast</h1>
+  <p class="text-lg text-muted-foreground mt-2">A succinct message that is displayed temporarily.</p>
+
+  <h2 class="subtitle-2 pb-2 mt-8">Basic</h2>
+  <p class="text-muted-foreground mt">Let's create basic toast using text only.</p>
+
+  <div class="preview">
+    <button dl-button type="button" appearance="ghost" (click)="openToast()">
+      Add to calendar
+    </button>
+  </div>
+
+  <h2 class="subtitle-2 pb-2 mt-8">With action</h2>
+  <p class="text-muted-foreground mt">You can attach action to the toast for user to interact with.</p>
+
+  <div class="preview">
+    <button dl-button type="button" appearance="ghost" (click)="openActionToast()">
+      Add to calendar
+    </button>
+  </div>
+
+  <h2 class="subtitle-2 pb-2 mt-8">From component</h2>
+  <p class="text-muted-foreground mt">Use your own components to create toasts.</p>
+
+  <div class="preview">
+    <button dl-button type="button" appearance="ghost" (click)="openFromComponent()">
+      Add to calendar
+    </button>
+  </div>
+
+  <h2 class="subtitle-2 pb-2 mt-8">From template</h2>
+  <p class="text-muted-foreground mt">Create toast from template in your component.</p>
+
+  <div class="preview">
+    <button dl-button type="button" appearance="ghost" (click)="openFromTemplate()">
+      Add to calendar
+    </button>
+  </div>
+</div>
+
+<ng-template #toast>
+  <div class="dl-toast">
+    <div class="flex items-center space-x-4">
+      <div class="flex-1">
+        <h4 class="font-semibold text-sm">Scheduled: Catch up</h4>
+        <p class="text-sm text-muted-foreground mt-1">Friday, February 10, 2024 at 5:57 PM</p>
+      </div>
+
+      <button dl-button type="button" appearance="ghost">Undo</button>
+    </div>
+  </div>
+</ng-template>

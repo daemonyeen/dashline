@@ -1,0 +1,14 @@
+<h3 class="mb-1 rounded-md font-semibold">
+  Components
+</h3>
+
+<ul class="flex flex-col space-y-3 mt-4">
+  @for (item of nav; track item.link) {
+  <a
+    class="text-sm hover:underline text-muted-foreground"
+    [routerLink]="item.link"
+  >
+    {{item.name}}
+  </a>
+  }
+</ul>
