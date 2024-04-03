@@ -2,13 +2,14 @@
   Components
 </h3>
 
-<ul class="flex flex-col space-y-3 mt-4">
+<dl-nav class="mt-4">
   @for (item of nav; track item.link) {
   <a
-    class="text-sm hover:underline text-muted-foreground"
+    dl-nav-link
     [routerLink]="item.link"
+    routerLinkActive="dl-nav-link-active"
   >
     {{item.name}}
   </a>
   }
-</ul>
+</dl-nav>

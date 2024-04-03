@@ -55,6 +55,10 @@ export class DlTabsComponent implements AfterContentInit {
   protected _activeTabTemplateRef$: Observable<TemplateRef<any> | null> =
     of(null);
 
+  get activeTab(): string | null {
+    return this._activeTab$.value;
+  }
+
   // --- @public ---
   ngAfterContentInit() {
     this._updateTabsMetadata();

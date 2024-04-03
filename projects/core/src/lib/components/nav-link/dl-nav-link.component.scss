@@ -1,0 +1,10 @@
+.dl-nav-link {
+  display: block;
+  padding: 0.375rem 1rem;
+  border-left: 1px solid hsl(var(--border));
+
+  &.dl-nav-link-active {
+    border-left: 2px solid hsl(var(--primary));
+    font-weight: var(--font-weight__medium);
+  }
+}

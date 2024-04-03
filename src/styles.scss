@@ -22,23 +22,25 @@
 
   --font-weight__normal: 400;
   --font-weight__medium: 500;
+  --font-weight__bold: 700;
   --line-height: 1.25;
   --radius: .5rem;
 
   // --- @colors ---
   --background: 0 0% 100%;
+  --background-accent: 223 88% 97%;
   --foreground: 240 10% 3.9%;
   --card: 0 0% 100%;
   --card-foreground: 240 10% 3.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
+  --primary: 212 100% 50%;
   --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
+  --secondary: 216 71% 96%;
   --secondary-foreground: 240 5.9% 10%;
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
+  --accent: 21 100% 50%;
   --accent-foreground: 240 5.9% 10%;
   --destructive: 0 72.22% 50.59%;
   --destructive-foreground: 0 0% 98%;
@@ -50,11 +52,29 @@
   --input-height: 40px;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+  border-radius: calc(var(--radius));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--border));
+  border-radius: calc(var(--radius));
+  border: 2px solid hsl(var(--background));
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
   line-height: var(--line-height);
   color: hsl(var(--foreground));
+}
+
+a {
+  @apply cursor-pointer hover:text-accent transition-colors;
+
+  color: inherit;
 }
 
 .transition-colors {
@@ -63,8 +83,13 @@ body {
   transition-duration: .15s;
 }
 
-.overlay-p {
+.overlay-padding {
   padding: 4px;
+}
+
+.overlay-autocomplete {
+  max-height: 260px;
+  overflow-y: auto;
 }
 
 .overlay-host {
@@ -109,18 +134,31 @@ body {
   }
 }
 
-.dl-toast {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  background: hsl(var(--background));
-  font-size: var(--font-size__sm);
-  font-weight: var(--font-weight__medium);
-  color: hsl(var(--foreground));
-  border: 1px solid hsl(var(--border));
-  border-radius: calc(var(--radius) - 2px);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px,
-  rgba(0, 0, 0, 0.1) 0 2px 4px -2px;
+.container {
+  @apply px-12;
+
+  max-width: 1600px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  grid-template-rows: 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 0;
+}
+
+.content { grid-area: 1 / 1 / 2 / 2; }
+.sidebar { grid-area: 1 / 2 / 2 / 3; }
+
+.dialog-header {
+  @apply grid gap-6;
+}
+
+.dialog-content {
+  @apply overflow-auto -mx-8 px-8;
+
+  max-height: calc(80vh - 6rem - 50px);
 }
 
 // --- DEMO ---

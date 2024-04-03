@@ -63,7 +63,7 @@ export class DlTooltipComponent extends DlOverlayHost implements AfterViewInit {
         tap(() => {
           counter++;
         }),
-        debounceTime(1000),
+        debounceTime(500),
         takeUntil(this._onDestroy$!),
       )
       .subscribe(() => {

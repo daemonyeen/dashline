@@ -2,6 +2,7 @@
 <div class="form-field" [ngClass]="_formFieldClasses">
   <ng-content></ng-content>
 </div>
+<ng-content select="dl-hint"></ng-content>
 @if (invalid) {
 <div>
   <ng-content select="dl-error"></ng-content>

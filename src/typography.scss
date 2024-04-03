@@ -31,9 +31,9 @@
 }
 
 .dialog-title {
-  @apply text-lg font-semibold leading-none tracking-tight;
+  @apply text-2xl font-bold leading-none tracking-tight;
 }
 
 .dialog-lead {
-  @apply text-sm text-muted-foreground mt-4;
+  @apply text-muted-foreground mt-3.5;
 }

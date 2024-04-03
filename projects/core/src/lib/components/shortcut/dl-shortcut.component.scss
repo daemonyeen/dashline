@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+  font-size: 0.825em;
+  font-weight: var(--font-weight__medium);
+  padding: 0.4rem 0.6rem;
+  line-height: 1rem;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 4px);
+}

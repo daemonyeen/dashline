@@ -7,6 +7,7 @@ export interface DlAlertOptions {
   lead: string;
   action?: string;
   cancel?: string;
+  destructive?: boolean;
 }
 
 @Component({

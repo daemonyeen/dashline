@@ -3,7 +3,9 @@
   display: block;
   background-color: hsl(var(--background));
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 2rem;
+  max-height: 90vh;
+  overflow: auto;
 }
 
 button {

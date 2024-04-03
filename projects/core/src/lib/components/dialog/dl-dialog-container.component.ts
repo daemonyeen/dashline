@@ -1,4 +1,4 @@
-import { CdkDialogContainer, DialogRef } from '@angular/cdk/dialog';
+import { CdkDialogContainer } from '@angular/cdk/dialog';
 import { Component, inject, Renderer2 } from '@angular/core';
 import { PortalModule } from '@angular/cdk/portal';
 import { overlayAnimation } from '../../animations/overlay-animation';
@@ -19,7 +19,6 @@ import { OverlayRef } from '@angular/cdk/overlay';
 })
 export class DlDialogContainerComponent extends CdkDialogContainer {
   // --- @deps --
-  private readonly _dialogRef = inject(DialogRef);
   private readonly _renderer = inject(Renderer2);
   private readonly _overlayRef2 = inject(OverlayRef);
 
@@ -46,10 +45,5 @@ export class DlDialogContainerComponent extends CdkDialogContainer {
         }, 150);
       });
     });
-  }
-
-  // --- protected ---
-  protected _close() {
-    this._dialogRef.close();
   }
 }

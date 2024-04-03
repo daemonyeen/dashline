@@ -7,6 +7,7 @@ import {
   inject,
   input,
   OnInit,
+  signal,
 } from '@angular/core';
 import { EMPTY, fromEvent } from 'rxjs';
 import { DlCheckboxComponent } from '../checkbox/dl-checkbox.component';
@@ -32,7 +33,7 @@ import {
   host: {
     class: 'dl-option',
     '[class.selectable]': '_config.selectable',
-    '[class.active]': '_active',
+    '[class.active]': '_active()',
   },
   exportAs: 'dlOption',
 })
@@ -59,7 +60,7 @@ export class DlOptionComponent<T> implements OnInit {
     ...(this._hostConfig || {}),
   };
 
-  protected _active = false;
+  protected _active = signal(false);
 
   // --- @inputs ---
   value = input<T | null>(null);
@@ -68,11 +69,11 @@ export class DlOptionComponent<T> implements OnInit {
   index = 0;
 
   get active(): boolean {
-    return this._active;
+    return this._active();
   }
 
   set active(selected: boolean) {
-    this._active = selected;
+    this._active.set(selected);
     this._cdr.markForCheck();
   }
 

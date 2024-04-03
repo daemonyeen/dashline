@@ -1,10 +1,10 @@
-<div cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="open()">
+<div cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="openByClick()">
   <ng-content></ng-content>
 </div>
 
 <ng-template
   cdkConnectedOverlay
-  cdkConnectedOverlayHasBackdrop
+  [cdkConnectedOverlayHasBackdrop]="triggerBy() === 'click'"
   [cdkConnectedOverlayOrigin]="trigger"
   cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
   [cdkConnectedOverlayOpen]="opened"

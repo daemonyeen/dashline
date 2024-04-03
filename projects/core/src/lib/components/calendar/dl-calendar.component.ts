@@ -42,8 +42,8 @@ import { DL_OVERLAY_HOST, DlOverlayHost } from '../../classes/dl-overlay-host';
 })
 export class DlCalendarComponent extends DlOverlayHost {
   // --- @inputs ---
-  readonly dateFormat = input(DL_DATE_FORMAT);
-  readonly target = input<DlInputComponent>();
+  dateFormat = input(DL_DATE_FORMAT);
+  target = input<DlInputComponent>();
 
   // --- @protected ---
   protected readonly _positions = DL_CALENDAR_POSITIONS;

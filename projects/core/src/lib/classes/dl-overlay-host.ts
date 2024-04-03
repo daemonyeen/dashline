@@ -45,7 +45,7 @@ export abstract class DlOverlayHost<T = any> implements AfterViewInit {
 
   // --- @template ---
   @ContentChildren(DlOptionComponent)
-  protected readonly _options!: QueryList<DlOptionComponent<unknown>>;
+  protected readonly _options!: QueryList<DlOptionComponent<T>>;
 
   @ViewChild(CdkConnectedOverlay, { read: CdkConnectedOverlay })
   readonly overlayHost!: CdkConnectedOverlay;
@@ -85,6 +85,12 @@ export abstract class DlOverlayHost<T = any> implements AfterViewInit {
     }
 
     activeOption.active = true;
+  }
+
+  updateOptionIndexes() {
+    this._options.forEach((option, i) => {
+      option.index = i;
+    });
   }
 
   ngAfterViewInit() {
@@ -132,11 +138,9 @@ export abstract class DlOverlayHost<T = any> implements AfterViewInit {
     }
 
     this._opened = !this._opened;
-    this._options.forEach((option, i) => {
-      option.index = i;
-    });
-
+    this.updateOptionIndexes();
     this._cdr.detectChanges();
+
     setTimeout(() => {
       fromEvent(this.overlayHost.overlayRef.overlayElement, 'mouseleave')
         .pipe(takeUntil(this._onDestroy$ || EMPTY))
@@ -144,8 +148,6 @@ export abstract class DlOverlayHost<T = any> implements AfterViewInit {
           this.activeIndex = -1;
         });
     });
-
-    this._cdr.detectChanges();
   }
 
   close() {

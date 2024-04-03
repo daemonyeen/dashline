@@ -1,0 +1,22 @@
+<ul *dlLet="_activeSwitchContent$ | async as activeSwitchContentId">
+  <li *ngFor="let switchContentMetadata of _switchMetadata$ | async">
+    <a
+      class="block  text-default p-3 rounded"
+      [class.active]="switchContentMetadata.id === activeSwitchContentId"
+      (click)="setActiveSwitchContent(switchContentMetadata.id)"
+    >
+      <span
+        *ngIf="switchContentMetadata.label; else switchLabel"
+      >
+        {{switchContentMetadata.label}}
+      </span>
+
+      <ng-template #switchLabel>
+        <ng-container *ngTemplateOutlet="switchContentMetadata.labelTemplate | async"></ng-container>
+      </ng-template>
+    </a>
+  </li>
+</ul>
+<div class="flex-1 dl-switch-content">
+  <ng-container *ngTemplateOutlet="_activeSwitchContentTemplateRef$ | async"></ng-container>
+</div>

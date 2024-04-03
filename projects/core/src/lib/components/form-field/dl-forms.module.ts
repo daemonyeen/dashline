@@ -5,12 +5,14 @@ import { DlInputComponent } from '../input/dl-input.component';
 import { DlErrorComponent } from '../error/dl-error.component';
 import { DlCheckboxComponent } from '../checkbox/dl-checkbox.component';
 import { DlCheckboxLabelComponent } from '../checkbox-label/dl-checkbox-label.component';
+import { DlHintComponent } from '../hint/dl-hint.component';
 
 @NgModule({
   imports: [
     DlFormFieldComponent,
     DlLabelComponent,
     DlErrorComponent,
+    DlHintComponent,
     DlInputComponent,
     DlCheckboxComponent,
     DlCheckboxLabelComponent,
@@ -19,6 +21,7 @@ import { DlCheckboxLabelComponent } from '../checkbox-label/dl-checkbox-label.co
     DlFormFieldComponent,
     DlLabelComponent,
     DlErrorComponent,
+    DlHintComponent,
     DlInputComponent,
     DlCheckboxComponent,
     DlCheckboxLabelComponent,

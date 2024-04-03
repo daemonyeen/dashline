@@ -16,18 +16,21 @@ import { NgClass } from '@angular/common';
   templateUrl: './dl-button.component.html',
   styleUrl: './dl-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'dl-button transition-colors', '[attr.tabindex]': '0' },
+  host: {
+    class: 'dl-button transition-colors',
+    '[attr.tabindex]': '0',
+  },
   exportAs: 'dlButton',
 })
 export class DlButtonComponent implements OnChanges {
   private readonly el = inject(ElementRef);
 
-  readonly grow = input<'default' | 'full-width'>('default');
-  readonly appearance = input<
+  grow = input<'default' | 'full-width'>('default');
+  appearance = input<
     'primary' | 'secondary' | 'destructive' | 'ghost' | 'link'
   >('primary');
-  readonly size = input<'default' | 'icon'>('default');
-  readonly disabled = input(false);
+  size = input<'default' | 'icon'>('default');
+  disabled = input(false);
 
   @HostBinding('class')
   get hostClasses() {

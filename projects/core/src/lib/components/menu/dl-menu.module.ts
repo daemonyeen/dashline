@@ -4,7 +4,17 @@ import { DlMenuComponent } from './dl-menu.component';
 import { DlOptionsDirective } from '../option/dl-options.directive';
 
 @NgModule({
-  imports: [DlOptionsDirective, DlOptionComponent, DlMenuComponent],
-  exports: [DlOptionsDirective, DlOptionComponent, DlMenuComponent],
+  imports: [
+    DlOptionsDirective,
+    DlOptionComponent,
+    DlOptionsDirective,
+    DlMenuComponent,
+  ],
+  exports: [
+    DlOptionsDirective,
+    DlOptionComponent,
+    DlOptionsDirective,
+    DlMenuComponent,
+  ],
 })
 export class DlMenuModule {}

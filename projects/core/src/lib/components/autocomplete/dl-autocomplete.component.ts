@@ -94,10 +94,11 @@ export class DlAutocompleteComponent<T>
 
   ngAfterContentInit() {
     this._options.changes.pipe(takeUntil(this._onDestroy$!)).subscribe(() => {
-      this._cdr.markForCheck();
+      this.updateOptionIndexes();
       if (this._formField.state() === 'focused') {
         this.open();
       }
+      this._cdr.markForCheck();
     });
   }
 
@@ -108,5 +109,10 @@ export class DlAutocompleteComponent<T>
 
     this._overlayWidth = this._elRef.nativeElement.offsetWidth;
     super.open();
+  }
+
+  override close() {
+    super.close();
+    this._formField.input.blur();
   }
 }

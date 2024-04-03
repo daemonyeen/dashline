@@ -16,6 +16,6 @@ export class DlToastConfig<D = any> {
   duration? = 5000;
   panelClass?: string | string[];
   data?: D | null = null;
-  horizontalPosition?: DlToastHorizontalPosition = 'right';
-  verticalPosition?: DlToastVerticalPosition = 'bottom';
+  horizontalPosition?: DlToastHorizontalPosition = 'center';
+  verticalPosition?: DlToastVerticalPosition = 'top';
 }

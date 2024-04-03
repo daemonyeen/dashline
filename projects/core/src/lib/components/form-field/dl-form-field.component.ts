@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
 import { DlInputComponent, DlInputState } from '../input/dl-input.component';
 import { takeUntil } from 'rxjs/operators';
 import { DlDestroyService } from '../../services/dl-destroy.service';
-import { toObservable } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'dl-form-field',
@@ -35,8 +34,8 @@ export class DlFormFieldComponent implements AfterContentInit {
   input!: DlInputComponent;
 
   // --- @inputs ---
-  readonly formSubmitted = input(true);
-  readonly manualInvalid = input<boolean>();
+  formSubmitted = input(true);
+  manualInvalid = input<boolean>();
 
   // --- @protected ---
   protected _state = signal<DlInputState>('idle');
@@ -52,7 +51,6 @@ export class DlFormFieldComponent implements AfterContentInit {
 
   // --- @public ---
   readonly state = this._state.asReadonly();
-  readonly state$ = toObservable(this._state);
 
   get invalid(): boolean {
     if (typeof this.manualInvalid() === 'boolean') {

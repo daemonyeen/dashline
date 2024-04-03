@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { DlNavModule } from '../../../../projects/core/src/lib/components/nav/dl-nav.module';
 
 type NavigationLink = Readonly<{
   name: string;
@@ -9,7 +10,7 @@ type NavigationLink = Readonly<{
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DlNavModule, RouterLinkActive],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
