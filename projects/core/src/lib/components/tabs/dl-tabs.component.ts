@@ -17,7 +17,7 @@ import { DlTabComponent } from '../tab/dl-tab.component';
 import { CommonModule } from '@angular/common';
 import { DlLetDirective } from '../../directives/let/dl-let.directive';
 
-export type TabMetadata = Readonly<{
+export type DlTabMetadata = Readonly<{
   id: string;
   label: string;
   labelTemplate: Observable<TemplateRef<any>>;
@@ -50,7 +50,7 @@ export class DlTabsComponent implements AfterContentInit {
   tabChange = new EventEmitter<string>();
 
   // --- @protected---
-  protected _tabsMetadata$ = new BehaviorSubject<TabMetadata[]>([]);
+  protected _tabsMetadata$ = new BehaviorSubject<DlTabMetadata[]>([]);
   protected _activeTab$ = new BehaviorSubject<string | null>(null);
   protected _activeTabTemplateRef$: Observable<TemplateRef<any> | null> =
     of(null);
@@ -73,7 +73,7 @@ export class DlTabsComponent implements AfterContentInit {
       return;
     }
 
-    this.setActiveTab(this._tabs.first?.id);
+    this.setActiveTab(this._tabs.first.id());
   }
 
   private _updateTabsMetadata() {
@@ -83,13 +83,13 @@ export class DlTabsComponent implements AfterContentInit {
           [
             ...tabsMetadata,
             {
-              id: tab.id,
-              label: tab.label,
+              id: tab.id(),
+              label: tab.label(),
               labelTemplate: tab.labelTemplateRef$,
               disabled: tab.disabled,
-            } as TabMetadata,
+            } as DlTabMetadata,
           ].filter(({ disabled }) => !disabled),
-        [] as TabMetadata[],
+        [] as DlTabMetadata[],
       ),
     );
   }
@@ -103,7 +103,7 @@ export class DlTabsComponent implements AfterContentInit {
     }
 
     this._tabs.forEach(tab => {
-      if (tab.id === activeTabId) {
+      if (tab.id() === activeTabId) {
         this._activeTabTemplateRef$ = tab.templateRef$;
       }
     });

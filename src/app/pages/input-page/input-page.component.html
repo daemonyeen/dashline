@@ -1,38 +1,41 @@
 <div class="p-6">
   <h1 class="text-4xl font-bold tracking-tight">Input</h1>
-  <p class="text-lg text-muted-foreground mt-2">Displays a form input field or a component that looks like an input field.</p>
+  <p class="mt-2 text-lg text-muted">
+    Displays a form input field or a component that looks like an input field.
+  </p>
 
-  <h2 class="subtitle-2 pb-2 mt-8">With icon</h2>
-
-  <div class="preview">
-    <dl-form-field>
-      <dl-label>Email</dl-label>
-      <dl-icon variant="ri-mail-line" class="mr-2"/>
-      <input dl-input type="text" placeholder="Please enter email address">
-    </dl-form-field>
-  </div>
-
-  <h2 class="subtitle-2 pb-2 mt-8">Disabled</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">With icon</h2>
 
   <div class="preview">
     <dl-form-field>
       <dl-label>Email</dl-label>
-      <dl-icon variant="ri-mail-line" class="mr-2"/>
-      <input dl-input [disabled]="true" type="text" placeholder="Please enter email address">
+      <dl-icon variant="ri-mail-line" class="mr-2" />
+      <input dl-input type="text" placeholder="Please enter email address" />
     </dl-form-field>
   </div>
 
-  <h2 class="subtitle-2 pb-2 mt-8">Required and invalid state</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">Disabled</h2>
+
+  <div class="preview">
+    <dl-form-field>
+      <dl-label>Email</dl-label>
+      <dl-icon variant="ri-mail-line" class="mr-2" />
+      <input
+        dl-input
+        [disabled]="true"
+        type="text"
+        placeholder="Please enter email address"
+      />
+    </dl-form-field>
+  </div>
+
+  <h2 class="subtitle-2 mt-8 pb-2">Required and invalid state</h2>
 
   <div class="preview">
     <dl-form-field [manualInvalid]="true">
       <dl-label [required]="true">Address</dl-label>
-      <dl-icon variant="ri-building-line" class="mr-2"/>
-      <input
-        dl-input
-        type="text"
-        placeholder="Please enter your address"
-      >
+      <dl-icon variant="ri-building-line" class="mr-2" />
+      <input dl-input type="text" placeholder="Please enter your address" />
       <dl-error>This address is not available for our services</dl-error>
     </dl-form-field>
   </div>

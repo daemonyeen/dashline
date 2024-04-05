@@ -1,0 +1,59 @@
+:host {
+  display: flex;
+  width: 100%;
+  padding: 1rem 1.25rem 1rem 1rem;
+
+  &.rounded {
+    border-radius: var(--radius);
+    border: 1px solid;
+  }
+
+  &.compact {
+    display: flex;
+    align-items: center;
+  }
+
+  &.info {
+    .icon {
+      color: hsl(var(--primary));
+    }
+
+    border-color: hsl(var(--border));
+  }
+
+  &.warning {
+    .icon {
+      color: #ef9400;
+    }
+
+    background-color: #fef7ea;
+    border-color: transparent;
+  }
+
+  &.success {
+    .icon {
+      color: #3ebe61;
+    }
+
+    background-color: #ebf7ee;
+    border-color: transparent;
+  }
+
+  &.error {
+    .icon {
+      color: #ea4e2c;
+    }
+
+    background-color: #fcedea;
+    border-color: transparent;
+  }
+}
+
+.icon {
+  font-size: 1.25rem;
+  margin-right: .75rem;
+}
+
+.content {
+  flex: 1;
+}

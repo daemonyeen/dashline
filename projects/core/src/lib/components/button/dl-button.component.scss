@@ -1,6 +1,4 @@
 :host {
-  --button__height: 2.5rem; // 40px
-
   // --- @display ---
   position: relative;
   display: inline-flex;
@@ -70,7 +68,6 @@
 
     &:not([disabled]):hover {
       background-color: hsl(var(--background));
-      color: hsl(var(--accent-foreground));
     }
   }
 

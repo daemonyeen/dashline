@@ -1,13 +1,15 @@
 <div class="p-6">
   <h1 class="text-4xl font-bold tracking-tight">Calendar</h1>
-  <p class="text-lg text-muted-foreground mt-2">A date field component that allows users to enter and edit date.</p>
+  <p class="mt-2 text-lg text-muted">
+    A date field component that allows users to enter and edit date.
+  </p>
 
-  <h2 class="subtitle-2 pb-2 mt-8">Basic calendar</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">Basic calendar</h2>
 
   <div class="preview">
     <dl-form-field class="max-w-[200px]">
-      <input #date dl-input type="text" [formControl]="dateControl">
-      <dl-calendar [target]="date"/>
+      <input #date dl-input type="text" [formControl]="dateControl" />
+      <dl-calendar [target]="date" />
     </dl-form-field>
   </div>
 </div>

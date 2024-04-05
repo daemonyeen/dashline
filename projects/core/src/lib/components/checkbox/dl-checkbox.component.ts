@@ -6,14 +6,14 @@ import {
   signal,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { JsonPipe, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { checkAnimation } from '../../animations/check-animation';
 import { toObservable } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'dl-checkbox',
   standalone: true,
-  imports: [NgClass, JsonPipe],
+  imports: [NgClass],
   templateUrl: './dl-checkbox.component.html',
   styleUrls: ['./dl-checkbox.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,7 +25,7 @@ import { toObservable } from '@angular/core/rxjs-interop';
       multi: true,
     },
   ],
-  host: { class: 'dl-checkbox transition-colors' },
+  host: { class: 'dl-checkbox' },
   exportAs: 'dlCheckbox',
 })
 export class DlCheckboxComponent implements ControlValueAccessor {

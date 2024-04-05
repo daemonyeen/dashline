@@ -2,6 +2,20 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: 'alert',
+    loadComponent: () =>
+      import('./pages/alert-page/alert-page.component').then(
+        m => m.AlertPageComponent,
+      ),
+  },
+  {
+    path: 'badge',
+    loadComponent: () =>
+      import('./pages/badge-page/badge-page.component').then(
+        m => m.BadgePageComponent,
+      ),
+  },
+  {
     path: 'button',
     loadComponent: () =>
       import('./pages/button-page/button-page.component').then(
@@ -34,6 +48,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/checkbox-page/checkbox-page.component').then(
         m => m.CheckboxPageComponent,
+      ),
+  },
+  {
+    path: 'toggle',
+    loadComponent: () =>
+      import('./pages/toggle-page/toggle-page.component').then(
+        m => m.TogglePageComponent,
       ),
   },
   {
@@ -83,6 +104,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/tabs-page/tabs-page.component').then(
         m => m.TabsPageComponent,
+      ),
+  },
+  {
+    path: 'switch',
+    loadComponent: () =>
+      import('./pages/switch-page/switch-page.component').then(
+        m => m.SwitchPageComponent,
       ),
   },
   {

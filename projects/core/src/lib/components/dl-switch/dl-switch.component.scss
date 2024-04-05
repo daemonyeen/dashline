@@ -3,7 +3,6 @@
   width: 100%;
 }
 
-.active {
-  background-color: hsl(var(--bg-secondary));
-  font-weight: var(--font-weight__medium);
+.content {
+  flex: 1;
 }

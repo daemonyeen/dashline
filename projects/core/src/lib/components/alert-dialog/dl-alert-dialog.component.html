@@ -1,5 +1,5 @@
-<h2 class="dialog-title">{{_data.title}}</h2>
-<p class="dialog-lead">{{_data.lead}}</p>
+<h2 class="dialog-title">{{ _data.title }}</h2>
+<p class="dialog-lead">{{ _data.lead }}</p>
 <div class="actions">
   <button
     dl-button
@@ -7,14 +7,9 @@
     [appearance]="_data.destructive ? 'destructive' : 'primary'"
     (click)="action()"
   >
-    {{_data.action}}
+    {{ _data.action }}
   </button>
-  <button
-    dl-button
-    type="button"
-    appearance="secondary"
-    (click)="close()"
-  >
-    {{_data.cancel}}
+  <button dl-button type="button" appearance="secondary" (click)="close()">
+    {{ _data.cancel }}
   </button>
 </div>

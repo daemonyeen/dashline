@@ -1,0 +1,7 @@
+<div
+  class="toggle transition-colors"
+  [class.disabled]="disabled()"
+  [class.checked]="_checked()"
+>
+  <div class="switch" [@transformCheck]="animationState"></div>
+</div>

@@ -10,7 +10,7 @@ import {
   input,
   Output,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   CdkConnectedOverlay,
   CdkOverlayOrigin,
@@ -27,7 +27,7 @@ import { DL_OVERLAY_HOST, DlOverlayHost } from '../../classes/dl-overlay-host';
 @Component({
   selector: 'dl-autocomplete',
   standalone: true,
-  imports: [CommonModule, CdkConnectedOverlay, CdkOverlayOrigin],
+  imports: [CdkConnectedOverlay, CdkOverlayOrigin],
   templateUrl: './dl-autocomplete.component.html',
   styleUrl: './dl-autocomplete.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

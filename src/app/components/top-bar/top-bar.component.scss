@@ -1,0 +1,5 @@
+:host {
+  @apply block border-b;
+
+  border-color: hsl(var(--border) / .6);
+}

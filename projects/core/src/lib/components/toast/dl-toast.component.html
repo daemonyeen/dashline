@@ -1,11 +1,11 @@
 <div class="text">
-  {{data.message}}
+  {{ data.message }}
 </div>
 
 @if (hasAction) {
-<div class="action">
-  <button dl-button appearance="ghost" (click)="action()">
-    {{data.action}}
-  </button>
-</div>
+  <div class="action">
+    <button dl-button appearance="ghost" (click)="action()">
+      {{ data.action }}
+    </button>
+  </div>
 }

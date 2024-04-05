@@ -12,9 +12,8 @@
   [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
   (backdropClick)="close()"
   (detach)="close()"
-
 >
   <div class="overlay-host" [@transformOverlay]="animationState">
-    <ng-container *ngTemplateOutlet="template()"/>
+    <ng-container *ngTemplateOutlet="template()" />
   </div>
 </ng-template>

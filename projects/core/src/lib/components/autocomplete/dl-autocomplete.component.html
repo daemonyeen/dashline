@@ -16,9 +16,9 @@
     [@transformOverlay]="animationState"
   >
     @if (_options.length === 0) {
-    <div class="empty">{{empty()}}</div>
+      <div class="empty">{{ empty() }}</div>
     } @else {
-    <ng-content select="[dl-options]"/>
+      <ng-content select="[dl-options]" />
     }
   </div>
 </ng-template>

@@ -18,6 +18,14 @@ type NavigationLink = Readonly<{
 export class NavigationComponent {
   readonly nav: NavigationLink[] = [
     {
+      name: 'Alert',
+      link: '/alert',
+    },
+    {
+      name: 'Badge',
+      link: '/badge',
+    },
+    {
       name: 'Button',
       link: '/button',
     },
@@ -36,6 +44,10 @@ export class NavigationComponent {
     {
       name: 'Checkbox',
       link: '/checkbox',
+    },
+    {
+      name: 'Toggle',
+      link: '/toggle',
     },
     {
       name: 'Select',
@@ -64,6 +76,10 @@ export class NavigationComponent {
     {
       name: 'Tabs',
       link: '/tabs',
+    },
+    {
+      name: 'Switch',
+      link: '/switch',
     },
     {
       name: 'Popover',

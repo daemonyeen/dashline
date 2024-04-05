@@ -5,13 +5,13 @@ import {
   TemplateRef,
   ViewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'dl-switch-label',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './dl-switch-label.component.html',
   styleUrls: ['./dl-switch-label.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,10 +19,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DlSwitchLabelComponent implements AfterViewInit {
   @ViewChild(TemplateRef, { read: TemplateRef })
-  protected _tabTemplateRef: TemplateRef<any>;
-  protected readonly _templateRef$ = new BehaviorSubject<TemplateRef<any>>(
-    null,
-  );
+  protected _tabTemplateRef!: TemplateRef<any>;
+  protected readonly _templateRef$ =
+    new BehaviorSubject<TemplateRef<any> | null>(null);
 
   readonly templateRef$ = this._templateRef$.asObservable();
 

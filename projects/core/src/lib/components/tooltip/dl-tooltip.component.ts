@@ -16,14 +16,14 @@ import {
   ScrollStrategyOptions,
 } from '@angular/cdk/overlay';
 import { DL_TOOLTIP_POSITIONS } from '../menu/dl-overlay-positions';
-import { CommonModule } from '@angular/common';
+
 import { fromEvent } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'dl-tooltip',
   standalone: true,
-  imports: [CommonModule, CdkConnectedOverlay, CdkOverlayOrigin],
+  imports: [CdkConnectedOverlay, CdkOverlayOrigin],
   templateUrl: './dl-tooltip.component.html',
   styleUrl: './dl-tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

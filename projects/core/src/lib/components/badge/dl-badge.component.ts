@@ -15,14 +15,16 @@ import {
   host: { class: 'dl-badge' },
 })
 export class DlBadgeComponent {
-  appearance = input<
-    'primary' | 'secondary' | 'destructive' | 'outline' | 'primary-outline'
-  >('primary');
+  // --- @inputs ---
+  appearance = input<'primary' | 'secondary' | 'destructive' | 'outline'>(
+    'primary',
+  );
 
+  // --- @protected ---
   @HostBinding('class')
-  get hostClasses() {
+  protected get _hostClasses() {
     return {
-      [this.appearance()]: this.appearance(),
+      [this.appearance()]: true,
     };
   }
 }

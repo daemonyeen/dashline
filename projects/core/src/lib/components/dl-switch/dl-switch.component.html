@@ -1,22 +1,27 @@
-<ul *dlLet="_activeSwitchContent$ | async as activeSwitchContentId">
-  <li *ngFor="let switchContentMetadata of _switchMetadata$ | async">
+<dl-nav *dlLet="_activeSwitchContent$ | async as activeSwitchContentId">
+  @for (
+    switchContentMetadata of _switchMetadata$ | async;
+    track switchContentMetadata
+  ) {
     <a
-      class="block  text-default p-3 rounded"
-      [class.active]="switchContentMetadata.id === activeSwitchContentId"
+      dl-nav-link
+      [class.dl-nav-link-active]="
+        switchContentMetadata.id === activeSwitchContentId
+      "
       (click)="setActiveSwitchContent(switchContentMetadata.id)"
     >
-      <span
-        *ngIf="switchContentMetadata.label; else switchLabel"
-      >
-        {{switchContentMetadata.label}}
-      </span>
-
-      <ng-template #switchLabel>
-        <ng-container *ngTemplateOutlet="switchContentMetadata.labelTemplate | async"></ng-container>
-      </ng-template>
+      @if (switchContentMetadata.label) {
+        <span>
+          {{ switchContentMetadata.label }}
+        </span>
+      } @else {
+        <ng-container
+          *ngTemplateOutlet="switchContentMetadata.labelTemplate | async"
+        ></ng-container>
+      }
     </a>
-  </li>
-</ul>
-<div class="flex-1 dl-switch-content">
-  <ng-container *ngTemplateOutlet="_activeSwitchContentTemplateRef$ | async"></ng-container>
+  }
+</dl-nav>
+<div class="content">
+  <ng-container *ngTemplateOutlet="_activeSwitchContentTemplateRef$ | async" />
 </div>

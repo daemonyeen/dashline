@@ -12,9 +12,11 @@
   [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
   (backdropClick)="close()"
   (detach)="close()"
-
 >
-  <div class="overlay-host overlay-padding" [@transformOverlay]="animationState">
-    <ng-content select="[dl-options]"/>
+  <div
+    class="overlay-host overlay-padding"
+    [@transformOverlay]="animationState"
+  >
+    <ng-content select="[dl-options]" />
   </div>
 </ng-template>

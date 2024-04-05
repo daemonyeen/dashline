@@ -1,12 +1,11 @@
 <div class="p-6">
   <h1 class="text-4xl font-bold tracking-tight">Table</h1>
-  <p class="text-lg text-muted-foreground mt-2">A responsive table component.</p>
+  <p class="mt-2 text-lg text-muted">A responsive table component.</p>
 
-  <h2 class="subtitle-2 pb-2 mt-8">Basic table</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">Basic table</h2>
 
   <div class="preview">
-
-    <div class="border rounded-md overflow-hidden">
+    <div class="overflow-hidden rounded-md border">
       <dl-table>
         <dl-header-row>
           <dl-header-cell>Invoice</dl-header-cell>
@@ -16,12 +15,12 @@
         </dl-header-row>
 
         @for (invoice of invoices; track invoice.invoice) {
-        <dl-row>
-          <dl-cell>{{invoice.invoice}}</dl-cell>
-          <dl-cell>{{invoice.paymentStatus}}</dl-cell>
-          <dl-cell>{{invoice.paymentMethod}}</dl-cell>
-          <dl-cell class="font-semibold">{{invoice.totalAmount}}</dl-cell>
-        </dl-row>
+          <dl-row>
+            <dl-cell>{{ invoice.invoice }}</dl-cell>
+            <dl-cell>{{ invoice.paymentStatus }}</dl-cell>
+            <dl-cell>{{ invoice.paymentMethod }}</dl-cell>
+            <dl-cell class="font-semibold">{{ invoice.totalAmount }}</dl-cell>
+          </dl-row>
         }
       </dl-table>
     </div>

@@ -34,7 +34,7 @@ export const checkAnimation = trigger('transformCheck', [
   transition(
     '* => unchecked',
     animate(
-      '150ms 25ms linear',
+      '150ms linear',
       style({
         opacity: 0,
         transform: 'scale3d(0, 0, 0)',

@@ -1,15 +1,13 @@
-<h3 class="mb-1 rounded-md font-semibold">
-  Components
-</h3>
+<h3 class="font-bold">Components</h3>
 
-<dl-nav class="mt-4">
+<dl-nav class="mt-6">
   @for (item of nav; track item.link) {
-  <a
-    dl-nav-link
-    [routerLink]="item.link"
-    routerLinkActive="dl-nav-link-active"
-  >
-    {{item.name}}
-  </a>
+    <a
+      dl-nav-link
+      [routerLink]="item.link"
+      routerLinkActive="dl-nav-link-active"
+    >
+      {{ item.name }}
+    </a>
   }
 </dl-nav>

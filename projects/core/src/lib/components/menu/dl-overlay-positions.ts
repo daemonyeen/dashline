@@ -46,6 +46,20 @@ export const DL_CALENDAR_POSITIONS: ConnectedPosition[] = [
     overlayY: 'bottom',
     offsetY: -16,
   },
+  {
+    originX: 'center',
+    originY: 'top',
+    overlayX: 'end',
+    overlayY: 'center',
+    offsetX: -16,
+  },
+  {
+    originX: 'center',
+    originY: 'top',
+    overlayX: 'start',
+    overlayY: 'center',
+    offsetX: 16,
+  },
 ];
 
 export const DL_MENU_POSITIONS: ConnectedPosition[] = [

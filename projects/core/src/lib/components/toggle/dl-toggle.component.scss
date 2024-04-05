@@ -1,0 +1,32 @@
+:host {
+  display: inline-block;
+}
+
+.toggle {
+  cursor: pointer;
+  position: relative;
+  width: 2.625rem;
+  height: 1.5rem;
+  background-color: hsl(var(--secondary));
+  border-radius: 9999px;
+
+  &.disabled {
+    cursor: default;
+    opacity: .5;
+  }
+
+  &.checked {
+    background-color: hsl(var(--primary));
+  }
+}
+
+.switch {
+  position: absolute;
+  width: calc(1.5rem - .250rem);
+  height: calc(1.5rem - .250rem);
+  top: .125rem;
+  left: .125rem;
+  background-color: hsl(var(--background));
+  border-radius: 9999px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+}

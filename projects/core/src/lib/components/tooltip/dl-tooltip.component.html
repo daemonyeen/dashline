@@ -9,9 +9,8 @@
   [cdkConnectedOverlayPositions]="_positions"
   [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
   (detach)="close()"
-
 >
   <div class="tooltip-host" [@transformOverlay]="animationState">
-    {{text()}}
+    {{ text() }}
   </div>
 </ng-template>

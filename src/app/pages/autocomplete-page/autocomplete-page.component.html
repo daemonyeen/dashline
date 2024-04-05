@@ -1,11 +1,11 @@
 <div class="p-6">
   <h1 class="text-4xl font-bold tracking-tight">Autocomplete</h1>
-  <p class="text-lg text-muted-foreground mt-2">Displays list of options for input.</p>
+  <p class="mt-2 text-lg text-muted">Displays list of options for input.</p>
 
-  <h2 class="subtitle-2 pb-2 mt-8">With formatting</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">With formatting</h2>
 
   <div class="preview">
-    <div class="flex-1 max-w-[425px]">
+    <div class="max-w-[425px] flex-1">
       <dl-autocomplete
         [format]="format"
         empty="Noting found"
@@ -13,12 +13,12 @@
       >
         <dl-form-field>
           <dl-label>Your favorite fruit</dl-label>
-          <input dl-input type="text" (input)="filter($event)">
+          <input dl-input type="text" (input)="filter($event)" />
         </dl-form-field>
 
         <ng-container dl-options>
-          @for (fruit of (filteredFruits$ | async); track fruit) {
-          <dl-option [value]="fruit">{{fruit}}</dl-option>
+          @for (fruit of filteredFruits$ | async; track fruit) {
+            <dl-option [value]="fruit">{{ fruit }}</dl-option>
           }
         </ng-container>
       </dl-autocomplete>

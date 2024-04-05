@@ -4,6 +4,7 @@
   line-height: 1rem;
   background: hsl(var(--primary-foreground));
   border: 0;
+  outline: 0;
   border-radius: 9999px;
   cursor: pointer;
   padding: .245rem .625rem;
@@ -29,12 +30,6 @@
   }
 
   &.outline {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--border));
-  }
-
-  &.primary-outline {
     background-color: hsl(var(--background));
     color: hsl(var(--primary));
     border: 1px solid hsl(var(--primary));

@@ -5,12 +5,13 @@ import {
   Component,
   ContentChild,
   inject,
+  input,
   Input,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BehaviorSubject, Subject } from 'rxjs';
+
+import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 import { DlSwitchLabelComponent } from '../dl-switch-label/dl-switch-label.component';
 import { takeUntil } from 'rxjs/operators';
 import { DlDestroyService } from '../../services/dl-destroy.service';
@@ -18,7 +19,7 @@ import { DlDestroyService } from '../../services/dl-destroy.service';
 @Component({
   selector: 'dl-switch-content',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './dl-switch-content.component.html',
   styleUrls: ['./dl-switch-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -31,11 +32,11 @@ export class DlSwitchContentComponent
   private readonly _onDestroy$ = inject(DlDestroyService);
 
   @ViewChild(TemplateRef, { read: TemplateRef })
-  protected _tabTemplateRef: TemplateRef<any>;
+  protected _tabTemplateRef!: TemplateRef<any>;
   @ContentChild(DlSwitchLabelComponent, {
     read: DlSwitchLabelComponent,
   })
-  protected _label: DlSwitchLabelComponent;
+  protected _label!: DlSwitchLabelComponent;
 
   protected _disabled = false;
 
@@ -43,15 +44,13 @@ export class DlSwitchContentComponent
     this._disabled = disabled;
     this.stateChange$.next();
   }
-  @Input() id: string;
-  @Input() label: string;
 
-  protected readonly _templateRef$ = new BehaviorSubject<TemplateRef<any>>(
-    null,
-  );
-  protected readonly _labelTemplateRef$ = new BehaviorSubject<TemplateRef<any>>(
-    null,
-  );
+  id = input.required<string>();
+  label = input('');
+
+  protected readonly _templateRef$ = new ReplaySubject<TemplateRef<any>>(1);
+  protected readonly _labelTemplateRef$ =
+    new BehaviorSubject<TemplateRef<any> | null>(null);
   readonly stateChange$ = new Subject<void>();
   readonly templateRef$ = this._templateRef$.asObservable();
   readonly labelTemplateRef$ = this._labelTemplateRef$.asObservable();

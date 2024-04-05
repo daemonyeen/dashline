@@ -1,0 +1,42 @@
+<div class="p-6">
+  <h1 class="text-4xl font-bold tracking-tight">Alert</h1>
+  <p class="mt-2 text-lg text-muted">
+    Отображает сообщение для привлечения внимания пользователя.
+  </p>
+
+  <h2 class="subtitle-2 mt-8 pb-2">Вариации</h2>
+
+  <div class="preview">
+    <div class="grid gap-4">
+      <dl-alert appearance="warning" icon="ri-service-line">
+        <h3 class="font-bold">Heads up!</h3>
+        <p class="mt-1 text-sm">
+          You can add components to your app using the cli.
+        </p>
+      </dl-alert>
+
+      <dl-alert appearance="success" icon="ri-check-line" [compact]="true">
+        <p class="text-green-700">You successfully claimed your reward!</p>
+      </dl-alert>
+
+      <dl-alert appearance="error" icon="ri-shield-line" [compact]="true">
+        <p class="text-destructive">
+          Your account don't have access to this page
+        </p>
+      </dl-alert>
+
+      <dl-alert appearance="info" icon="ri-wallet-3-line">
+        <div class="flex items-center">
+          <div class="flex-1">
+            <h3 class="font-bold">Donation limit</h3>
+            <p class="mt-1 text-sm">You can donate up to $50</p>
+          </div>
+
+          <button dl-button type="button" appearance="primary">Donate</button>
+        </div>
+      </dl-alert>
+    </div>
+  </div>
+
+  <h2 class="subtitle-2 mt-8 border-b pb-2">Установка и использование</h2>
+</div>

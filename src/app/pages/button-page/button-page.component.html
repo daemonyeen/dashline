@@ -1,8 +1,10 @@
 <div class="p-6">
-  <h1 class="text-4xl font-bold tracking-tight">Button</h1>
-  <p class="text-lg text-muted-foreground mt-2">Displays a button or a component that looks like a button.</p>
+  <h1 class="text-3xl font-bold tracking-tight">Button</h1>
+  <p class="mt-2 text-muted">
+    Displays a button or a component that looks like a button.
+  </p>
 
-  <h2 class="subtitle-2 pb-2 mt-8">Examples</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">Examples</h2>
 
   <div class="preview">
     <div class="flex flex-wrap items-center space-x-4">
@@ -14,33 +16,37 @@
     </div>
   </div>
 
-  <h2 class="subtitle-2 pb-2 mt-8">Disabled</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">Disabled</h2>
 
   <div class="preview">
     <div class="flex flex-wrap items-center space-x-4">
       <button dl-button [disabled]="true">Primary</button>
-      <button dl-button appearance="secondary" [disabled]="true">Secondary</button>
+      <button dl-button appearance="secondary" [disabled]="true">
+        Secondary
+      </button>
       <button dl-button appearance="ghost" [disabled]="true">Ghost</button>
-      <button dl-button appearance="destructive" [disabled]="true">Destructive</button>
+      <button dl-button appearance="destructive" [disabled]="true">
+        Destructive
+      </button>
       <button dl-button appearance="link" [disabled]="true">Link</button>
     </div>
   </div>
 
-  <h2 class="subtitle-2 pb-2 mt-8">Variants</h2>
+  <h2 class="subtitle-2 mt-8 pb-2">Variants</h2>
 
   <div class="preview">
     <div class="flex flex-wrap items-center space-x-4">
       <button dl-button appearance="ghost" size="icon">
-        <dl-icon variant="ri-mail-line"/>
+        <dl-icon variant="ri-mail-line" />
       </button>
 
       <button dl-button>
-        <dl-icon variant="ri-mail-line" class="mr-2"/>
+        <dl-icon variant="ri-mail-line" class="mr-2" />
         Login with email
       </button>
 
       <button dl-button [disabled]="true">
-        <dl-loader class="mr-2"/>
+        <dl-loader class="mr-2" />
         Please wait
       </button>
     </div>

@@ -1,25 +1,24 @@
 <div class="tabs-host">
   <ul *dlLet="_activeTab$ | async as activeTabId" class="tabs">
-    <li
-      *ngFor="let tabMetadata of _tabsMetadata$ | async"
-      class="tab"
-    >
-      <a
-        class="tab-link"
-        [class.active]="tabMetadata.id === activeTabId"
-        (click)="setActiveTab(tabMetadata.id)"
-      >
-        <ng-container *ngIf="tabMetadata.label; else tabLabel">
-          {{tabMetadata.label}}
-        </ng-container>
-
-        <ng-template #tabLabel>
-          <ng-container *ngTemplateOutlet="tabMetadata.labelTemplate | async"></ng-container>
-        </ng-template>
-      </a>
-    </li>
+    @for (tabMetadata of _tabsMetadata$ | async; track tabMetadata) {
+      <li class="tab">
+        <a
+          class="tab-link"
+          [class.active]="tabMetadata.id === activeTabId"
+          (click)="setActiveTab(tabMetadata.id)"
+        >
+          @if (tabMetadata.label) {
+            {{ tabMetadata.label }}
+          } @else {
+            <ng-container
+              *ngTemplateOutlet="tabMetadata.labelTemplate | async"
+            ></ng-container>
+          }
+        </a>
+      </li>
+    }
   </ul>
 </div>
 <div class="dl-tabs-content">
-  <ng-container *ngTemplateOutlet="_activeTabTemplateRef$ | async"></ng-container>
+  <ng-container *ngTemplateOutlet="_activeTabTemplateRef$ | async" />
 </div>

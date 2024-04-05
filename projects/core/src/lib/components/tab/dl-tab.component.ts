@@ -5,11 +5,12 @@ import {
   Component,
   ContentChild,
   inject,
+  input,
   Input,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 import { DlTabLabelComponent } from '../tab-label/dl-tab-label.component';
 import { takeUntil } from 'rxjs/operators';
@@ -18,7 +19,7 @@ import { DlDestroyService } from '../../services/dl-destroy.service';
 @Component({
   selector: 'dl-tab',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './dl-tab.component.html',
   styleUrls: ['./dl-tab.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -41,8 +42,9 @@ export class DlTabComponent implements AfterViewInit, AfterContentInit {
     this._disabled = disabled;
     this.stateChange$.next();
   }
-  @Input({ required: true }) id = '';
-  @Input() label = '';
+
+  id = input.required<string>();
+  label = input('');
 
   protected readonly _templateRef$ = new ReplaySubject<TemplateRef<any>>(1);
   protected readonly _labelTemplateRef$ =

@@ -97,9 +97,15 @@ export class DlInputComponent implements OnInit, OnDestroy {
   }
 
   set(value: string) {
-    const input = this.elementRef.nativeElement;
+    if (!this.ngControl) {
+      const input = this.elementRef.nativeElement;
 
-    input.value = value;
+      input.value = value;
+
+      return;
+    }
+
+    this.ngControl.control.setValue(value);
   }
 
   blur() {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   CdkConnectedOverlay,
   CdkOverlayOrigin,
@@ -14,7 +14,7 @@ import { DL_OVERLAY_HOST, DlOverlayHost } from '../../classes/dl-overlay-host';
 @Component({
   selector: 'dl-menu',
   standalone: true,
-  imports: [CommonModule, CdkConnectedOverlay, CdkOverlayOrigin],
+  imports: [CdkConnectedOverlay, CdkOverlayOrigin],
   templateUrl: './dl-menu.component.html',
   styleUrls: ['./dl-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

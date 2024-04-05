@@ -28,7 +28,7 @@
 
   // --- @colors ---
   --background: 0 0% 100%;
-  --background-accent: 223 88% 97%;
+  --background-accent: 210 20% 98%;
   --foreground: 240 10% 3.9%;
   --card: 0 0% 100%;
   --card-foreground: 240 10% 3.9%;
@@ -38,18 +38,18 @@
   --primary-foreground: 0 0% 98%;
   --secondary: 216 71% 96%;
   --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
+  --muted: 0 0% 30%;
   --accent: 21 100% 50%;
-  --accent-foreground: 240 5.9% 10%;
+  --accent-foreground: 0 0% 98%;
   --destructive: 0 72.22% 50.59%;
   --destructive-foreground: 0 0% 98%;
   --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
+  --input: 0 0% 89%;
   --checkbox: 0 0% 76%;
   --ring: 240 5% 64.9%;
 
-  --input-height: 40px;
+  --input__height: 2.75rem;
+  --button__height: calc(var(--input__height) - 2px);
 }
 
 ::-webkit-scrollbar {
@@ -75,12 +75,6 @@ a {
   @apply cursor-pointer hover:text-accent transition-colors;
 
   color: inherit;
-}
-
-.transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-  transition-duration: .15s;
 }
 
 .overlay-padding {
@@ -112,7 +106,8 @@ a {
 }
 
 .overlay-dialog-backdrop {
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(.1rem);
 }
 
 .cdk-dialog-container {
