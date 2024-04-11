@@ -7,6 +7,7 @@ import {
   inject,
   input,
   signal,
+  ViewEncapsulation,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DlInputComponent, DlInputState } from '../input/dl-input.component';
@@ -20,8 +21,9 @@ import { DlDestroyService } from '../../services/dl-destroy.service';
   templateUrl: './dl-form-field.component.html',
   styleUrls: ['./dl-form-field.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
   providers: [DlDestroyService],
-  host: { class: 'dl-form-field' },
+  host: { class: 'dl-form-field-host' },
   exportAs: 'dlFormField',
 })
 export class DlFormFieldComponent implements AfterContentInit {

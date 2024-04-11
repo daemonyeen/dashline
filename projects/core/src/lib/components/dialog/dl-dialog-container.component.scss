@@ -2,10 +2,11 @@
   position: relative;
   display: block;
   background-color: hsl(var(--background));
-  border-radius: 1rem;
+  border-radius: .5rem;
   padding: 2rem;
   max-height: 90vh;
   overflow: auto;
+  outline: 0;
 }
 
 button {

@@ -41,12 +41,4 @@ export class AutocompletePageComponent {
 
     this.query.set(query);
   }
-
-  format(fruit: string | null): string {
-    if (!fruit) {
-      return '';
-    }
-
-    return `My favorite fruit is ${fruit.toLowerCase()}`;
-  }
 }

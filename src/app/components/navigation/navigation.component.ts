@@ -78,8 +78,8 @@ export class NavigationComponent {
       link: '/tabs',
     },
     {
-      name: 'Switch',
-      link: '/switch',
+      name: 'Segmented',
+      link: '/segmented',
     },
     {
       name: 'Popover',

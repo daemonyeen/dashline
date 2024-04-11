@@ -1,0 +1,59 @@
+@if (appearance() === 'nav') {
+  <dl-nav *dlLet="_activeContent$ | async as activeContentId">
+    @for (
+      contentMetadata of _childrenMetadata$ | async;
+      track contentMetadata
+    ) {
+      <a
+        dl-nav-link
+        [class.dl-nav-link-active]="contentMetadata.id === activeContentId"
+        (click)="setActiveContent(contentMetadata.id)"
+      >
+        @if (contentMetadata.label) {
+          <span>
+            {{ contentMetadata.label }}
+          </span>
+        } @else {
+          <ng-container
+            *ngTemplateOutlet="contentMetadata.labelTemplate | async"
+          ></ng-container>
+        }
+      </a>
+    }
+  </dl-nav>
+} @else {
+  <div
+    *dlLet="_activeContent$ | async as activeContentId"
+    role="tablist"
+    aria-label="tabs"
+    class="tabs"
+  >
+    <div dl-segmented-indicator class="indicator"></div>
+    @for (
+      contentMetadata of _childrenMetadata$ | async;
+      track contentMetadata
+    ) {
+      <button
+        dl-segmented-tab
+        role="tab"
+        tabindex="0"
+        class="tab"
+        [class.selected]="contentMetadata.id === activeContentId"
+        (click)="setActiveContent(contentMetadata.id)"
+      >
+        @if (contentMetadata.label) {
+          <span>
+            {{ contentMetadata.label }}
+          </span>
+        } @else {
+          <ng-container
+            *ngTemplateOutlet="contentMetadata.labelTemplate | async"
+          ></ng-container>
+        }
+      </button>
+    }
+  </div>
+}
+<div class="segmented-content">
+  <ng-container *ngTemplateOutlet="_activeContentTemplateRef$ | async" />
+</div>

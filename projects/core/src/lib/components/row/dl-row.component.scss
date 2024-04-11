@@ -4,8 +4,4 @@
   &:not(:last-child) {
     border-bottom: 1px solid hsl(var(--border));
   }
-
-  &:hover {
-    background-color: hsl(var(--background-accent));
-  }
 }

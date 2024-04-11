@@ -12,32 +12,31 @@ import {
 } from '@angular/core';
 
 import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
-import { DlSwitchLabelComponent } from '../dl-switch-label/dl-switch-label.component';
+import { DlSegmentedLabelComponent } from '../segmented-label/dl-segmented-label.component';
 import { takeUntil } from 'rxjs/operators';
 import { DlDestroyService } from '../../services/dl-destroy.service';
 
 @Component({
-  selector: 'dl-switch-content',
+  selector: 'dl-segmented-content',
   standalone: true,
   imports: [],
-  templateUrl: './dl-switch-content.component.html',
-  styleUrls: ['./dl-switch-content.component.scss'],
+  templateUrl: './dl-segmented-content.component.html',
+  styleUrls: ['./dl-segmented-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [DlDestroyService],
-  host: { class: 'dl-switch-content' },
+  host: { class: 'dl-segmented-content' },
 })
-export class DlSwitchContentComponent
+export class DlSegmentedContentComponent
   implements AfterViewInit, AfterContentInit
 {
   private readonly _onDestroy$ = inject(DlDestroyService);
 
   @ViewChild(TemplateRef, { read: TemplateRef })
   protected _tabTemplateRef!: TemplateRef<any>;
-  @ContentChild(DlSwitchLabelComponent, {
-    read: DlSwitchLabelComponent,
+  @ContentChild(DlSegmentedLabelComponent, {
+    read: DlSegmentedLabelComponent,
   })
-  protected _label!: DlSwitchLabelComponent;
-
+  protected _label!: DlSegmentedLabelComponent;
   protected _disabled = false;
 
   @Input() set disabled(disabled: boolean) {

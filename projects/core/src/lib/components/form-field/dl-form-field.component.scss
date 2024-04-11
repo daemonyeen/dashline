@@ -1,19 +1,17 @@
-:host {
+.dl-form-field-host {
   display: block;
   width: 100%;
 
-  ::ng-deep {
-    .dl-label {
-      margin-bottom: .5rem;
-    }
+  .dl-label {
+    margin-bottom: .5rem;
   }
 }
 
-.form-field {
+.dl-form-field {
   display: flex;
   align-items: center;
   border-radius: calc(var(--radius) - 2px);
-  border: 1px solid hsl(var(--input));
+  border: 2px solid hsl(var(--input));
   background-color: hsl(var(--background));
   box-shadow: rgba(0, 0, 0, 0.05) 0 1px 2px 0;
   padding: 0 .75rem;
@@ -25,19 +23,16 @@
     padding-bottom: 8px;
   }
 
-  ::ng-deep {
-    textarea, input {
-      display: block;
-      flex: 1;
-      font-size: var(--font-size__sm);
-      outline: 0;
-      width: 100%;
-    }
+  textarea, input {
+    display: block;
+    flex: 1;
+    outline: 0;
+    width: 100%;
   }
 
   &.focused {
     box-shadow: rgb(255, 255, 255) 0 0 0 2px,
-      rgb(167, 202, 255) 0 0 0 4px,
+      rgb(79 129 246) 0 0 0 4px,
       rgba(0, 0, 0, 0) 0 0 0 0;
   }
 

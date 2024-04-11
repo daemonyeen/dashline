@@ -1,6 +1,7 @@
 @import 'remixicon/fonts/remixicon.css';
 @import '@angular/cdk/overlay-prebuilt.css';
 @import 'typography';
+@import 'fonts';
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +16,7 @@
 
 :root {
   // --- @font
-  --font-family: 'Inter', sans-serif;
+  --font-family: 'Golos Text', sans-serif;
   --font-size: 16px;
   --font-size__sm: 0.875rem;
   --font-size__xs: 0.75rem;
@@ -28,25 +29,35 @@
 
   // --- @colors ---
   --background: 0 0% 100%;
-  --background-accent: 210 20% 98%;
+  --background-accent: 223 88% 97%;
   --foreground: 240 10% 3.9%;
   --card: 0 0% 100%;
   --card-foreground: 240 10% 3.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
-  --primary: 212 100% 50%;
+  --primary: 232 100% 55%;
   --primary-foreground: 0 0% 98%;
-  --secondary: 216 71% 96%;
+  --secondary: 0 0% 93%;
   --secondary-foreground: 240 5.9% 10%;
-  --muted: 0 0% 30%;
+  --muted: 36 2% 50%;
   --accent: 21 100% 50%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 72.22% 50.59%;
-  --destructive-foreground: 0 0% 98%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 355 80% 55%;
+  --destructive-background: 0 100% 95%;
+  --destructive-foreground: 0 0% 100%;
   --border: 240 5.9% 90%;
-  --input: 0 0% 89%;
+  --input: 240 5.9% 90%;
   --checkbox: 0 0% 76%;
   --ring: 240 5% 64.9%;
+  --warning: 40 100% 46%;
+  --warning-background: 46 100% 92%;
+  --warning-foreground: 0 0% 100%;
+  --success: 127 63% 34%;
+  --success-backgound: 108 71% 92%;
+  --success-foreground: 0 0% 100%;
+  --info: 232 82% 51%;
+  --info-backgound: 223 88% 97%;
+  --info-foreground: 0 0% 100%;
 
   --input__height: 2.75rem;
   --button__height: calc(var(--input__height) - 2px);
@@ -127,12 +138,6 @@ a {
     opacity: 0;
     visibility: visible;
   }
-}
-
-.container {
-  @apply px-12;
-
-  max-width: 1600px;
 }
 
 .layout {

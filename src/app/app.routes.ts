@@ -107,10 +107,10 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'switch',
+    path: 'segmented',
     loadComponent: () =>
-      import('./pages/switch-page/switch-page.component').then(
-        m => m.SwitchPageComponent,
+      import('./pages/segmented-page/segmented-page.component').then(
+        m => m.SegmentedPageComponent,
       ),
   },
   {

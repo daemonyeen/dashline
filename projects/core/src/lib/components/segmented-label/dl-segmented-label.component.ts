@@ -9,15 +9,15 @@ import {
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'dl-switch-label',
+  selector: 'dl-segmented-label',
   standalone: true,
   imports: [],
-  templateUrl: './dl-switch-label.component.html',
-  styleUrls: ['./dl-switch-label.component.scss'],
+  templateUrl: './dl-segmented-label.component.html',
+  styleUrls: ['./dl-segmented-label.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'dl-switch-label' },
+  host: { class: 'dl-segmented-label' },
 })
-export class DlSwitchLabelComponent implements AfterViewInit {
+export class DlSegmentedLabelComponent implements AfterViewInit {
   @ViewChild(TemplateRef, { read: TemplateRef })
   protected _tabTemplateRef!: TemplateRef<any>;
   protected readonly _templateRef$ =

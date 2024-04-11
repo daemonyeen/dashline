@@ -10,5 +10,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   exportAs: 'dlLabel',
 })
 export class DlLabelComponent {
-  readonly required = input(false);
+  required = input(false);
 }

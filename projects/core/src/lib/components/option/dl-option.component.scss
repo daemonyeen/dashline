@@ -1,13 +1,12 @@
 :host {
   position: relative;
   display: block;
-  font-size: var(--font-size__sm);
   border-radius: calc(var(--radius) - 4px);
   padding: .375rem .5rem;
   cursor: pointer;
 
   &.active {
-    background-color: hsl(var(--secondary));
+    background-color: hsl(var(--secondary) / .7);
   }
 
   &.selectable {

@@ -5,6 +5,19 @@ import {
   input,
 } from '@angular/core';
 
+export type DlBadgeSize = 'sm' | 'md';
+
+export type DLBadgeAppearance =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'success-alt'
+  | 'warning'
+  | 'warning-alt'
+  | 'destructive'
+  | 'destructive-alt'
+  | 'outline';
+
 @Component({
   selector: 'dl-badge',
   standalone: true,
@@ -16,15 +29,15 @@ import {
 })
 export class DlBadgeComponent {
   // --- @inputs ---
-  appearance = input<'primary' | 'secondary' | 'destructive' | 'outline'>(
-    'primary',
-  );
+  appearance = input<DLBadgeAppearance>('primary');
+  size = input<DlBadgeSize>('md');
 
   // --- @protected ---
   @HostBinding('class')
   protected get _hostClasses() {
     return {
       [this.appearance()]: true,
+      [this.size()]: true,
     };
   }
 }

@@ -72,8 +72,11 @@
   }
 
   &.link {
+    font-weight: var(--font-weight__normal);
     background-color: transparent;
     color: inherit;
+    padding-left: 0;
+    padding-right: 0;
 
     &:not([disabled]):hover {
       background-color: hsl(var(--background));

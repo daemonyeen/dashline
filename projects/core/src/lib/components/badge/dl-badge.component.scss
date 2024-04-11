@@ -1,22 +1,26 @@
 :host {
   // --- @display ---
   display: inline-flex;
-  line-height: 1rem;
   background: hsl(var(--primary-foreground));
   border: 0;
   outline: 0;
-  border-radius: 9999px;
-  cursor: pointer;
-  padding: .245rem .625rem;
+  border-radius: .5rem;
+  padding: .25rem .625rem;
 
   // --- @font ---
-  font-size: var(--font-size__sm);
+  font-size: var(--font-size);
   font-weight: var(--font-weight__medium);
-  color: #fff;
+  line-height: 1;
   white-space: nowrap;
+
+  &.sm {
+    padding: .1875rem .5rem;
+    font-size: var(--font-size__sm);
+  }
 
   &.primary {
     background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 
   &.secondary {
@@ -24,9 +28,44 @@
     color: hsl(var(--secondary-foreground));
   }
 
+  &.success {
+    background-color: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+  }
+
+  &.success-alt {
+    background-color: hsl(var(--success-backgound));
+    color: hsl(var(--success));
+  }
+
+  &.warning {
+    background-color: hsl(var(--warning));
+    color: hsl(var(--warning-foreground));
+  }
+
+  &.warning-alt {
+    background-color: hsl(var(--warning-background));
+    color: hsl(var(--warning));
+  }
+
+  &.info {
+    background-color: hsl(var(--info));
+    color: hsl(var(--info-foreground));
+  }
+
+  &.info {
+    background-color: hsl(var(--info-backgound));
+    color: hsl(var(--info));
+  }
+
   &.destructive {
     background-color: hsl(var(--destructive));
     color: hsl(var(--destructive-foreground));
+  }
+
+  &.destructive-alt {
+    background-color: hsl(var(--destructive-background));
+    color: hsl(var(--destructive));
   }
 
   &.outline {

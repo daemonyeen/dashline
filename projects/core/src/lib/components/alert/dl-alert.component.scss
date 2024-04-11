@@ -15,36 +15,37 @@
 
   &.info {
     .icon {
-      color: hsl(var(--primary));
+      color: hsl(var(--info));
     }
 
-    border-color: hsl(var(--border));
+    background-color: hsl(var(--info-backgound));
+    border-color: transparent;
   }
 
   &.warning {
     .icon {
-      color: #ef9400;
+      color: hsl(var(--warning));
     }
 
-    background-color: #fef7ea;
+    background-color: hsl(var(--warning-background));
     border-color: transparent;
   }
 
   &.success {
     .icon {
-      color: #3ebe61;
+      color:hsl(var(--success)) ;
     }
 
-    background-color: #ebf7ee;
+    background-color: hsl(var(--success-backgound));
     border-color: transparent;
   }
 
   &.error {
     .icon {
-      color: #ea4e2c;
+      color: hsl(var(--destructive));
     }
 
-    background-color: #fcedea;
+    background-color: hsl(var(--destructive-background));
     border-color: transparent;
   }
 }

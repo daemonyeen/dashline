@@ -3,6 +3,13 @@ module.exports = {
   content: ['src/**/*.{ts,html}'],
   safelist: ['transition-colors'],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1600px',
+      },
+    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',
